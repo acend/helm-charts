@@ -35,6 +35,7 @@ acendTraining:
           kubernetes.io/tls-acme: "true"
         appname: hugo-training-template
         domain: k8s.puzzle.ch
+        # domainmain: puzzle.ch
 
 
 
