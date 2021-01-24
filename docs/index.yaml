@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  acend-training-chart:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-01-24T10:51:46.905087837+01:00"
+    description: This Helm Chart is used to deploy the acend trainings
+    digest: beadc59d5390d9bdf2becdba9c3ae2a7aa189c6e2fb8b9aad5d6f676fa931f5b
+    name: acend-training-chart
+    type: application
+    urls:
+    - https://acend.github.io/helm-charts/acend-training-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-01-24T10:51:46.903461545+01:00"

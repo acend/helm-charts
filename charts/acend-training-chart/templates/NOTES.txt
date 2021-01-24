@@ -1,0 +1,11 @@
+{{- $releaseName := .Release.Name -}}
+1. Get the application URL by running these commands:
+{{- range .Values.acendTraining.deployments }}
+{{- $hostname := "" }}
+{{- if or (eq $releaseName "main") (eq $releaseName "latest") }}
+{{- $hostname = printf "%s%s%s" .ingress.appname "." .ingress.domain }}
+{{- else }}
+{{- $hostname = printf "%s%s%s%s%s" .ingress.appname "-" $releaseName "." .ingress.domain }}
+{{- end }}
+* {{ $hostname }}
+{{- end }}

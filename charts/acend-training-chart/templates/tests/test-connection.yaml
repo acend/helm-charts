@@ -1,0 +1,22 @@
+{{- $fullName := include "acend-training-chart.fullname" . -}}
+{{- $all := . -}}
+{{- $servicePort := .Values.acendTraining.servicePort -}}
+{{- range .Values.acendTraining.deployments }}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ $fullName }}-{{ .name }}-test-connection"
+  labels:
+    {{- include "acend-training-chart.labels" $all | nindent 4 }}
+    app.kubernetes.io/name: {{ include "acend-training-chart.name" $all }}-{{ .name }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ $fullName }}-{{ .name }}:{{ $servicePort }}']
+  restartPolicy: Never
+{{- end }}
