@@ -28,3 +28,11 @@ Finally let's create the helm repo index
 ```bash
 helm repo index docs --url https://acend.github.io/helm-charts/ 
 ```
+
+## Test the Chart
+
+To test the Charts run the following command
+
+```bash
+helm install -n <namespace> --dry-run latest ./charts/acend-training-chart/
+```

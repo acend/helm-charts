@@ -10,6 +10,10 @@
 {{- else }}
 {{- $hostname = printf "%s%s%s%s%s" .ingress.appname "-" $releaseName "." .ingress.domain }}
 {{- end }}
+{{- $secretName := .ingress.secretOverride }}
+{{- if not $secretName }}
+{{- $secretName = printf "%s%s%s" $fullName "-" .name  }}
+{{- end }}
 ---
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
@@ -26,7 +30,7 @@ spec:
   tls:
     - hosts:
         - "{{ $hostname }}"
-      secretName: {{ $hostname | replace "." "-" }}
+      secretName: {{ $secretName | replace "." "-" }}
   rules:
     - host: "{{ $hostname }}"
       http:
