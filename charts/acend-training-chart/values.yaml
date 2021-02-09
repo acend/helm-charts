@@ -19,7 +19,7 @@ acendTraining:
           kubernetes.io/ingress.class: nginx-public
           kubernetes.io/tls-acme: "true"
           cert-manager.io/cluster-issuer: acend-letsencrypt
-        secretOverride: secretName
+        # secretOverride: secretName
         appname: hugo-training-template
         domain: training.acend.ch
     - 
