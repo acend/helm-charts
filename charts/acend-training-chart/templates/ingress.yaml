@@ -30,7 +30,9 @@ spec:
   tls:
     - hosts:
         - "{{ $hostname }}"
+      {{- if not ingress.useDefaultSecret }}
       secretName: {{ $secretName | replace "." "-" }}
+      {{- end }}
   rules:
     - host: "{{ $hostname }}"
       http:
