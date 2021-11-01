@@ -3,7 +3,17 @@ entries:
   acend-training-chart:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-02-23T13:44:27.513846594+01:00"
+    created: "2021-11-01T10:10:37.497402898+01:00"
+    description: This Helm Chart is used to deploy the acend trainings
+    digest: 63155aa034e1c185989565aada5dd4eaad95e14cd518bcd90c9ec0aabed49daa
+    name: acend-training-chart
+    type: application
+    urls:
+    - https://acend.github.io/helm-charts/acend-training-chart-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-11-01T10:10:37.496919043+01:00"
     description: This Helm Chart is used to deploy the acend trainings
     digest: 567bc806959a7d10c0ac0d2024a751931cee8a12ed82228befd0aff8b5b3acee
     name: acend-training-chart
@@ -13,7 +23,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-02-23T13:44:27.513209952+01:00"
+    created: "2021-11-01T10:10:37.496436498+01:00"
     description: This Helm Chart is used to deploy the acend trainings
     digest: c256c42bc5dc6a1c77a52807348da83832974b6f824a34c544989d37695cf657
     name: acend-training-chart
@@ -23,7 +33,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-02-23T13:44:27.512777537+01:00"
+    created: "2021-11-01T10:10:37.495797824+01:00"
     description: This Helm Chart is used to deploy the acend trainings
     digest: ebc86102d24f70e906a0703060bd9282f11b05eae503bdb8bb8107537b488418
     name: acend-training-chart
@@ -31,4 +41,4 @@ entries:
     urls:
     - https://acend.github.io/helm-charts/acend-training-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2021-02-23T13:44:27.511857798+01:00"
+generated: "2021-11-01T10:10:37.494936353+01:00"
