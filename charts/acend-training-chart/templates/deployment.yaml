@@ -37,7 +37,7 @@ spec:
             privileged: false
             readOnlyRootFilesystem: false
             runAsNonRoot: false
-          image: "{{ .image.repository }}:{{ .image.tag | default $all.Release.Name }}{{ .image.tagsuffix | default "" }}"
+          image: "{{ .image.repository }}:{{ .image.tagprefix | default "" }}{{ .image.tag | default $all.Release.Name }}{{ .image.tagsuffix | default "" }}"
           imagePullPolicy: {{ .image.pullPolicy }}
           ports:
             - name: http

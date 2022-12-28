@@ -2,17 +2,17 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-
 acendTraining:
   servicePort: 8080
   deployments:
-    - 
-      name: acend
+
+    - name: acend
       replicaCount: 1
       image:
         repository: quay.io/acend/hugo-training-template
         pullPolicy: Always
         tag: ""
+        tagprefix: ""
         tagsuffix: ""
       ingress:
         annotations: 
@@ -25,14 +25,15 @@ acendTraining:
         useDefaultSecret: false
         appname: hugo-training-template
         domain: training.acend.ch
-    - 
-      name: puzzle
+
+    - name: puzzle
       replicaCount: 1
       image:
         repository: quay.io/acend/hugo-training-template
         pullPolicy: Always
         tag: ""
-        tagsuffix: "-puzzle"
+        tagprefix: "puzzle-"
+        tagsuffix: ""
       ingress:
         annotations: 
           kubernetes.io/ingress.class: nginx-public
@@ -41,8 +42,6 @@ acendTraining:
         appname: hugo-training-template
         domain: k8s.puzzle.ch
         # domainmain: puzzle.ch
-
-
 
 nameOverride: ""
 fullnameOverride: ""
