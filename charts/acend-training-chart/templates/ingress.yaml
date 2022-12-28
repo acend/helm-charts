@@ -48,4 +48,3 @@ spec:
                 name: {{ $fullName }}-{{ .name }}
                 port:
                   number: {{ $svcPort }}
-{{- end }}
