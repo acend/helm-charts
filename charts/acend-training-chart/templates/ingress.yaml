@@ -28,11 +28,15 @@ metadata:
   {{- end }}
 spec:
   tls:
+    {{- if .ingress.emptyTLS }}
+    - {}
+    {{- else }}
     - hosts:
         - "{{ $hostname }}"
       {{- if not .ingress.useDefaultSecret }}
       secretName: {{ $secretName | replace "." "-" }}
       {{- end }}
+    {{- end }}
   rules:
     - host: "{{ $hostname }}"
       http:
