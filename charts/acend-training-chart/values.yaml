@@ -20,7 +20,8 @@ acendTraining:
           kubernetes.io/tls-acme: "true"
           cert-manager.io/cluster-issuer: acend-letsencrypt
         # secretOverride: secretName
-        useTLS: true
+        # Adds an empty TLS configuration, e.g., for use on OpenShift with wildcard certificates
+        emptyTLS: false
         useDefaultSecret: false
         appname: hugo-training-template
         domain: training.acend.ch
