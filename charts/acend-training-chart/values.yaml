@@ -20,6 +20,7 @@ acendTraining:
           kubernetes.io/tls-acme: "true"
           cert-manager.io/cluster-issuer: acend-letsencrypt
         # secretOverride: secretName
+        useTLS: true
         useDefaultSecret: false
         appname: hugo-training-template
         domain: training.acend.ch
