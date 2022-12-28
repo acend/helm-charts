@@ -1,4 +1,4 @@
-{{- if .Values.ingress.create -}}
+{{- if .Values.route.create -}}
 {{- $fullName := include "acend-training-chart.fullname" . -}}
 {{- $svcPort := .Values.acendTraining.servicePort -}}
 {{- $releaseName := .Release.Name -}}
@@ -11,13 +11,9 @@
 {{- else }}
 {{- $hostname = printf "%s%s%s%s%s" .ingress.appname "-" $releaseName "." .ingress.domain }}
 {{- end }}
-{{- $secretName := .ingress.secretOverride }}
-{{- if not $secretName }}
-{{- $secretName = printf "%s%s%s" $fullName "-" .name  }}
-{{- end }}
 ---
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: route.openshift.io/v1
+kind: Route
 metadata:
   name: {{ $fullName }}-{{ .name }}
   labels:
@@ -28,22 +24,14 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
+  host: "{{ $hostname }}"
+  to:
+    kind: Service
+    name: {{ $fullName }}-{{ .name }}
+  port:
+    targetPort: http
   tls:
-    - hosts:
-        - "{{ $hostname }}"
-      {{- if not .ingress.useDefaultSecret }}
-      secretName: {{ $secretName | replace "." "-" }}
-      {{- end }}
-  rules:
-    - host: "{{ $hostname }}"
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ $fullName }}-{{ .name }}
-                port:
-                  number: {{ $svcPort }}
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
 {{- end }}
 {{- end }}
