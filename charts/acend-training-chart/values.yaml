@@ -14,6 +14,8 @@ acendTraining:
         tag: ""
         tagprefix: ""
         tagsuffix: ""
+      podLabels: {}
+      podAnnotations: {}
       ingress:
         annotations: 
           kubernetes.io/ingress.class: nginx-public
@@ -34,6 +36,8 @@ acendTraining:
         tag: ""
         tagprefix: "puzzle-"
         tagsuffix: ""
+      podLabels: {}
+      podAnnotations: {}
       ingress:
         annotations: 
           kubernetes.io/ingress.class: nginx-public
