@@ -1,7 +1,3 @@
-# Default values for acend-training-chart.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
 acendTraining:
   servicePort: 8080
   deployments:
@@ -17,7 +13,7 @@ acendTraining:
       podLabels: {}
       podAnnotations: {}
       ingress:
-        annotations: 
+        annotations:
           kubernetes.io/ingress.class: nginx-public
           kubernetes.io/tls-acme: "true"
           cert-manager.io/cluster-issuer: acend-letsencrypt
@@ -39,7 +35,7 @@ acendTraining:
       podLabels: {}
       podAnnotations: {}
       ingress:
-        annotations: 
+        annotations:
           kubernetes.io/ingress.class: nginx-public
           kubernetes.io/tls-acme: "true"
         useDefaultSecret: true
