@@ -3,6 +3,18 @@ entries:
   acend-training-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-04-13T15:19:31.697059724Z"
+    description: Deploy acend training pages
+    digest: 28edc8e077c1ec5f4a3d8e00b163dba6923e74b191645b56cbbfca2294d9504c
+    maintainers:
+    - name: acend
+    name: acend-training-chart
+    type: application
+    urls:
+    - https://github.com/acend/helm-charts/releases/download/acend-training-chart-0.1.8/acend-training-chart-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-04-13T10:28:13.570532799Z"
     description: This Helm Chart is used to deploy the acend trainings
     digest: 705bdc26d989ea87c71efb4b0670abd06e7613f27b60a9ef7fe028e052a8e56d
@@ -11,4 +23,27 @@ entries:
     urls:
     - https://github.com/acend/helm-charts/releases/download/acend-training-chart-0.1.7/acend-training-chart-0.1.7.tgz
     version: 0.1.7
-generated: "2023-04-13T10:28:13.570541498Z"
+  uptime-dashboard:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-04-13T15:19:31.866904399Z"
+    dependencies:
+    - name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.52.9
+    - name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 20.2.0
+    - name: prometheus-blackbox-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 7.7.0
+    description: Deplay a Grafana dashboard to monitor application uptime
+    digest: a2aaebb12b71e774709ef06fa82ba39a8e41d367c1ee6a94e31a5dc34923d04f
+    maintainers:
+    - name: acend
+    name: uptime-dashboard
+    type: application
+    urls:
+    - https://github.com/acend/helm-charts/releases/download/uptime-dashboard-0.1.0/uptime-dashboard-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-04-13T15:19:31.8669181Z"
