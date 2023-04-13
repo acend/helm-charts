@@ -1,38 +1,4 @@
-# Acend Helm Charts
+# acend helm charts
 
-This repository contains the acend helm charts.
-The charts are published as helm repository using github-pages on the main branch from the `docs` directory.
-
-## Development
-
-Use the Chart Version
-
-## Package Charts and Deploy
-
-First we want the charts to be well linted:
-
-```bash
-helm lint ./charts/*
-```
-
-Verify the output and fix errors.
-
-Then let's package the helm charts and move the tgz files into the docs folder
-
-```bash
-helm package ./charts/* && mv *.tgz docs/
-```
-
-Finally let's create the helm repo index
-
-```bash
-helm repo index docs --url https://acend.github.io/helm-charts/ 
-```
-
-## Test the Chart
-
-To test the Charts run the following command
-
-```bash
-helm install -n <namespace> --dry-run latest ./charts/acend-training-chart/
-```
+This repository contains acend's helm charts.
+After merging into the `main` branch, the charts are automatically published as a helm repository using github-pages on the `gh-pages` branch.
