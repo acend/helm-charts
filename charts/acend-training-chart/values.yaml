@@ -1,7 +1,3 @@
-# Default values for acend-training-chart.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
 acendTraining:
   servicePort: 8080
   deployments:
@@ -11,13 +7,13 @@ acendTraining:
       image:
         repository: quay.io/acend/hugo-training-template
         pullPolicy: Always
-        tag: ""
+        tag: "latest"
         tagprefix: ""
         tagsuffix: ""
       podLabels: {}
       podAnnotations: {}
       ingress:
-        annotations: 
+        annotations:
           kubernetes.io/ingress.class: nginx-public
           kubernetes.io/tls-acme: "true"
           cert-manager.io/cluster-issuer: acend-letsencrypt
@@ -33,13 +29,13 @@ acendTraining:
       image:
         repository: quay.io/acend/hugo-training-template
         pullPolicy: Always
-        tag: ""
-        tagprefix: "puzzle-"
-        tagsuffix: ""
+        tag: "latest"
+        tagprefix: ""
+        tagsuffix: "-puzzle"
       podLabels: {}
       podAnnotations: {}
       ingress:
-        annotations: 
+        annotations:
           kubernetes.io/ingress.class: nginx-public
           kubernetes.io/tls-acme: "true"
         useDefaultSecret: true
