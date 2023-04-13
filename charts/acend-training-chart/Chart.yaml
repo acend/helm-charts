@@ -4,5 +4,5 @@ description: Deploy acend training pages
 type: application
 maintainers:
   - name: acend
-version: 0.1.7
+version: 0.1.8
 appVersion: 1.0.0
