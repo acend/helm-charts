@@ -7,7 +7,7 @@ acendTraining:
       image:
         repository: quay.io/acend/hugo-training-template
         pullPolicy: Always
-        tag: ""
+        tag: "latest"
         tagprefix: ""
         tagsuffix: ""
       podLabels: {}
@@ -29,9 +29,9 @@ acendTraining:
       image:
         repository: quay.io/acend/hugo-training-template
         pullPolicy: Always
-        tag: ""
-        tagprefix: "puzzle-"
-        tagsuffix: ""
+        tag: "latest"
+        tagprefix: ""
+        tagsuffix: "-puzzle"
       podLabels: {}
       podAnnotations: {}
       ingress:
