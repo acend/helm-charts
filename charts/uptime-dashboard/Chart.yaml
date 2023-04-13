@@ -8,11 +8,11 @@ maintainers:
 appVersion: "1.16.0"
 dependencies:
   - name: grafana
-    version: 6.x.x
+    version: 8.x.x
     repository: https://grafana.github.io/helm-charts
   - name: prometheus
-    version: 15.x.x
+    version: 20.x.x
     repository: https://prometheus-community.github.io/helm-charts
   - name: prometheus-blackbox-exporter
-    version: 5.x.x
+    version: 7.x.x
     repository: https://prometheus-community.github.io/helm-charts
