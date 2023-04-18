@@ -4,7 +4,7 @@ metadata:
   labels:
     app: prometheus
     component: server
-  name: acend-ocp-uptime-monitoring-prometheus-server
+  name: {{ .Release.Name }}-prometheus-server
 data:
   alerting_rules.yml: |
     {}
@@ -39,7 +39,7 @@ data:
         - source_labels: [__param_target]
           target_label: instance
         - target_label: __address__
-          replacement: acend-ocp-uptime-monitoring-prometheus-blackbox-exporter:9115
+          replacement: {{ .Release.Name }}-prometheus-blackbox-exporter:9115
 
     alerting:
       alertmanagers:
@@ -50,7 +50,7 @@ data:
         bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
         relabel_configs:
         - source_labels: [__meta_kubernetes_namespace]
-          regex: acend-ocp-uptime-monitoring-prod
+          regex: acend-openshift-operations-monitoring-prod
           action: keep
         - source_labels: [__meta_kubernetes_pod_label_app]
           regex: prometheus
