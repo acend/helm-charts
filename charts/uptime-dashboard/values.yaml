@@ -83,10 +83,8 @@ prometheus:
             module: [http]
           static_configs:
             - targets: |
-              {{- range .Values.users }}
-                - https://uptime-app-uptime-app-prod.apps.{{ . }}-ops-training.openshift.ch/
-                - https://console.apps.{{ . }}-ops-training.openshift.ch/
-              {{- end }}
+              - https://uptime-app-uptime-app-prod.apps.tim01-ops-training.openshift.ch/
+              - https://console.apps.tim01-ops-training.openshift.ch/
           relabel_configs:
             - source_labels: [__address__]
               target_label: __param_target
