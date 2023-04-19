@@ -82,7 +82,7 @@ prometheus:
           params:
             module: [http]
           static_configs:
-            - targets: |
+            - targets:
               - https://uptime-app-uptime-app-prod.apps.tim01-ops-training.openshift.ch/
               - https://console.apps.tim01-ops-training.openshift.ch/
           relabel_configs:
