@@ -15,7 +15,7 @@ grafana:
     hosts:
       - uptime-dashboard.example.com
     tls:
-      - secretName: openshift-operations-grafana
+      - secretName: openshift-operations-monitoring
         hosts:
           - uptime-dashboard.example.com
   persistence:
@@ -27,7 +27,7 @@ grafana:
       datasources:
         - name: Prometheus
           type: prometheus
-          url: http://acend-ocp-uptime-monitoring-prometheus-server
+          url: "http://{{ .Release.name }}-prometheus-server"
           access: proxy
           isDefault: true
   sidecar:
@@ -52,11 +52,6 @@ prometheus-blackbox-exporter:
           tls_config:
             insecure_skip_verify: true
 prometheus:
-  rbac:
-    create: false
-  server:
-    persistentVolume:
-      enabled: true
   alertmanager:
     enabled: false
   kube-state-metrics:
@@ -65,3 +60,37 @@ prometheus:
     enabled: false
   prometheus-pushgateway:
     enabled: false
+  rbac:
+    create: false
+  server:
+    configMapOverrideName: "obsolete"
+    global:
+      scrape_interval: 5s
+      scrape_timeout: 5s
+      evaluation_interval: 1m
+    persistentVolume:
+      enabled: true
+  serverFiles:
+    prometheus.yml:
+      scrape_configs:
+        - job_name: prometheus
+          static_configs:
+          - targets:
+            - localhost:9090
+        - job_name: 'prometheus-blackbox-exporter'
+          metrics_path: /probe
+          params:
+            module: [http]
+          static_configs:
+            - targets: |
+              {{- range .Values.users }}
+                - https://uptime-app-uptime-app-prod.apps.{{ . }}-ops-training.openshift.ch/
+                - https://console.apps.{{ . }}-ops-training.openshift.ch/
+              {{- end }}
+          relabel_configs:
+            - source_labels: [__address__]
+              target_label: __param_target
+            - source_labels: [__param_target]
+              target_label: instance
+            - target_label: __address__
+              replacement: "{{ .Release.Name }}-prometheus-blackbox-exporter:9115"
