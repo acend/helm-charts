@@ -30,6 +30,9 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
+  {{- if .ingress.ingressClassName }}
+  ingressClassName: {{ .ingress.ingressClassName}}
+  {{- end }}
   tls:
     {{- if .ingress.emptyTLS }}
     - {}
