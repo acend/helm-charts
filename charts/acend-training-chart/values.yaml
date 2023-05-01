@@ -37,10 +37,10 @@ acendTraining:
       ingress:
         annotations:
           kubernetes.io/tls-acme: "true"
-        ingressClassName: nginx-public
+        # ingressClassName: nginx
         useDefaultSecret: true
         appname: hugo-training-template
-        domain: puzzle.ch
+        domain: training.acend.ch
         # domainmain: puzzle.ch
 
 nameOverride: ""
