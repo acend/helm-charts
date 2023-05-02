@@ -3,6 +3,18 @@ entries:
   acend-training-chart:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-05-02T13:07:32.07374427Z"
+    description: Deploy acend training pages
+    digest: e7251102140366cb9411d87137e38851e196630f16f9f67c12e6126166b15616
+    maintainers:
+    - name: acend
+    name: acend-training-chart
+    type: application
+    urls:
+    - https://github.com/acend/helm-charts/releases/download/acend-training-chart-0.1.9/acend-training-chart-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-04-13T15:19:31.697059724Z"
     description: Deploy acend training pages
     digest: 28edc8e077c1ec5f4a3d8e00b163dba6923e74b191645b56cbbfca2294d9504c
@@ -46,4 +58,4 @@ entries:
     urls:
     - https://github.com/acend/helm-charts/releases/download/uptime-dashboard-0.1.0/uptime-dashboard-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-13T15:19:31.8669181Z"
+generated: "2023-05-02T13:07:32.07375427Z"
