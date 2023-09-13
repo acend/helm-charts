@@ -28,6 +28,7 @@ metadata:
   {{- with .ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
+    haproxy.router.openshift.io/hsts_header: max-age=31536000;includeSubDomains;preload
   {{- end }}
 spec:
   {{- if .ingress.ingressClassName }}
