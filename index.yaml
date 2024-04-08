@@ -50,6 +50,28 @@ entries:
   uptime-dashboard:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2024-04-08T11:32:07.338783984Z"
+    dependencies:
+    - name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.52.9
+    - name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 20.2.0
+    - name: prometheus-blackbox-exporter
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 7.7.0
+    description: Deplay a Grafana dashboard to monitor application uptime
+    digest: a9b4cf26f9b07c9cd321d590634426e20bcafe8f9df9bf263159b00e79c73daa
+    maintainers:
+    - name: acend
+    name: uptime-dashboard
+    type: application
+    urls:
+    - https://github.com/acend/helm-charts/releases/download/uptime-dashboard-0.1.1/uptime-dashboard-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-04-13T15:19:31.866904399Z"
     dependencies:
     - name: grafana
@@ -70,4 +92,4 @@ entries:
     urls:
     - https://github.com/acend/helm-charts/releases/download/uptime-dashboard-0.1.0/uptime-dashboard-0.1.0.tgz
     version: 0.1.0
-generated: "2023-09-12T12:24:39.007945969Z"
+generated: "2024-04-08T11:32:07.338799242Z"
