@@ -39,7 +39,7 @@ data:
         - source_labels: [__param_target]
           target_label: instance
         - target_label: __address__
-          replacement: acend-ocp-uptime-monitoring-prometheus-blackbox-exporter:9115
+          replacement: {{ .Release.Name }}-prometheus-blackbox-exporter:9115
 
     alerting:
       alertmanagers:
